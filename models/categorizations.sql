@@ -1,7 +1,7 @@
 with participations_categorized as (
     select
         decidim_categories.id as id,
-        decidim_categories.name->>'fr' as name,
+        decidim_categories.name->>'{{ var('DBT_LANGUAGE_CODE') }}' as name,
         null as child_id,
         null as child_name,
         categorizable_id,
@@ -12,9 +12,9 @@ with participations_categorized as (
 union all
     select
         parent_categories.id as id,
-        parent_categories.name->>'fr' as name,
+        parent_categories.name->>'{{ var('DBT_LANGUAGE_CODE') }}' as name,
         decidim_categories.id as child_id,
-        decidim_categories.name->>'fr' as child_name,
+        decidim_categories.name->>'{{ var('DBT_LANGUAGE_CODE') }}' as child_name,
         categorizable_id,
         categorizable_type
     from decidim_categorizations

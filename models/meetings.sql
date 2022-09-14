@@ -1,7 +1,7 @@
 select
     decidim_meetings_meetings.id,
-    decidim_meetings_meetings.title->>'fr' as title,
-    regexp_replace(description->>'fr', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as description,
+    decidim_meetings_meetings.title->>'{{ var('DBT_LANGUAGE_CODE') }}' as title,
+    regexp_replace(description->>'{{ var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as description,
     (case length(address) when 0 then 'Pas d''adresse' else address end) as address,
     (case when attendees_count is null is false then attendees_count else 0 end) as attendees_count,
     decidim_meetings_meetings.created_at,
