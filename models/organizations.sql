@@ -15,4 +15,4 @@ select id,
     users_registration_mode,
     time_zone
 from decidim_organizations
-where host = '{{ env_var('DBT_DECIDIM_HOST') }}'
+where host = '{{ env_var('DBT_DECIDIM') }}'
