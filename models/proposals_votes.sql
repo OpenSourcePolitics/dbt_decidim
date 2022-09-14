@@ -1,0 +1,9 @@
+select decidim_proposals_proposal_votes.id, 
+      decidim_proposals_proposal_votes.created_at,
+      decidim_proposals_proposal_votes.decidim_author_id,
+      decidim_proposals_proposal_votes.decidim_proposal_id,
+      decidim_proposals_proposals.decidim_component_id,
+      decidim_proposals_proposals.title as proposal_title,
+      decidim_proposals_proposals.url as proposal_url
+from decidim_proposals_proposal_votes
+join {{ ref('proposals') }} as decidim_proposals_proposals on decidim_proposals_proposal_votes.decidim_proposal_id = decidim_proposals_proposals.id
