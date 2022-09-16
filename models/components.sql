@@ -4,8 +4,8 @@ with participatory_spaces as (
         select
             id as ps_id,
             published_at as ps_published_at,
-            title->>'fr' as ps_title,
-            subtitle->>'fr' as ps_subtitle,
+            title->>'{{ var('DBT_LANGUAGE_CODE') }}' as ps_title,
+            subtitle->>'{{ var('DBT_LANGUAGE_CODE') }}' as ps_subtitle,
             slug as ps_slug,
             decidim_organization_id,
             'Decidim::Assembly' as ps_type,
@@ -15,8 +15,8 @@ with participatory_spaces as (
         select
             id as ps_id, 
             published_at as ps_published_at, 
-            title->>'fr' as ps_title, 
-            subtitle->>'fr' as ps_subtitle, 
+            title->>'{{ var('DBT_LANGUAGE_CODE') }}' as ps_title, 
+            subtitle->>'{{ var('DBT_LANGUAGE_CODE') }}' as ps_subtitle, 
             slug as ps_slug, 
             decidim_organization_id, 
             'Decidim::ParticipatoryProcess' as ps_type,
