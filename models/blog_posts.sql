@@ -1,7 +1,7 @@
 select
     decidim_blogs_posts.id,
-    title->>'{{ var('DBT_LANGUAGE_CODE') }}' as title,
-    regexp_replace(body->>'{{ var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as body,
+    title->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as title,
+    regexp_replace(body->>'{{ env_var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as body,
     decidim_component_id,
     decidim_blogs_posts.created_at,
     decidim_blogs_posts.updated_at,
