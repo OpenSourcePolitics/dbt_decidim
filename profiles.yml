@@ -1,0 +1,12 @@
+default:
+  target: prod
+  outputs:
+    prod:
+      type: postgres
+      host: "{{ var('POSTGRES_HOST') }}"
+      user: "{{ var('POSTGRES_USER') }}"
+      password: "{{ var('POSTGRES_PASSWORD') }}"
+      port: "{{ var('POSTGRES_PORT') }}"
+      dbname: "{{ var('POSTGRES_DB') }}"
+      schema: models
+      threads: 1
