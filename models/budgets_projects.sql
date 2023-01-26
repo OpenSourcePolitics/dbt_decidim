@@ -1,7 +1,7 @@
 select
     decidim_budgets_projects.id, 
-    decidim_budgets_projects.title->>'{{ var('DBT_LANGUAGE_CODE') }}' as title,
-    regexp_replace(decidim_budgets_projects.description->>'{{ var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as description,
+    decidim_budgets_projects.title->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as title,
+    regexp_replace(decidim_budgets_projects.description->>'{{ env_var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as description,
     decidim_budgets_projects.decidim_scope_id, 
     decidim_budgets_projects.budget_amount as project_amount, 
     decidim_budgets_budgets.id as budget_id,

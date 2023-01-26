@@ -5,7 +5,7 @@ select id,
     available_locales,
     created_at,
     updated_at,
-    description->>'{{ var('DBT_LANGUAGE_CODE') }}' as description,
+    description->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as description,
     secondary_hosts,
     available_authorizations,
     header_snippets,
@@ -15,4 +15,4 @@ select id,
     users_registration_mode,
     time_zone
 from decidim_organizations
-where host = '{{ var('DBT_DECIDIM') }}'
+where host = '{{ env_var('DBT_DECIDIM') }}'

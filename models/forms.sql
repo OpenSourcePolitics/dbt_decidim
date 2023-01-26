@@ -15,7 +15,7 @@ union all
 )
 select
     questionnaires.questionnaire_id as id,
-    title->>'{{ var('DBT_LANGUAGE_CODE') }}' as title,
+    title->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as title,
     decidim_components.id as decidim_component_id,
     concat ('https://',organization_host, '/', ps_space_type_slug,'/', ps_slug, '/f/', decidim_component_id) as "questionnaire_url"
 from questionnaires

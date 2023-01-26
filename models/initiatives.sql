@@ -1,8 +1,8 @@
 select 
     decidim_initiatives.id,
     decidim_initiatives.id::text as id_as_text,
-    title->>'{{ var('DBT_LANGUAGE_CODE') }}' as title,
-    regexp_replace(decidim_initiatives.description->>'{{ var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as description,
+    title->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as title,
+    regexp_replace(decidim_initiatives.description->>'{{ env_var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as description,
     decidim_author_id,
     published_at,
     (case state
@@ -17,7 +17,7 @@ select
     signature_type,
     signature_start_date,
     signature_end_date,
-    regexp_replace(answer->>'{{ var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as answer,
+    regexp_replace(answer->>'{{ env_var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as answer,
     answered_at,
     answer_url,
     decidim_initiatives.created_at,
@@ -34,8 +34,8 @@ select
     concat('https://', (select host from {{ ref('organizations') }} org), '/initiatives/i-',decidim_initiatives.id) as url,
     supports_required,
     decidim_areas.id as area_id,
-    (case when decidim_areas.name ? '{{ var('DBT_LANGUAGE_CODE') }}' then decidim_areas.name->>'{{ var('DBT_LANGUAGE_CODE') }}' else 'No sub category' end) as area_name,
-    (case when decidim_area_types.name ? '{{ var('DBT_LANGUAGE_CODE') }}' then decidim_area_types.name->>'{{ var('DBT_LANGUAGE_CODE') }}' else 'No category' end) as area_type_name,
+    (case when decidim_areas.name ? '{{ env_var('DBT_LANGUAGE_CODE') }}' then decidim_areas.name->>'{{ env_var('DBT_LANGUAGE_CODE') }}' else 'No sub category' end) as area_name,
+    (case when decidim_area_types.name ? '{{ env_var('DBT_LANGUAGE_CODE') }}' then decidim_area_types.name->>'{{ env_var('DBT_LANGUAGE_CODE') }}' else 'No category' end) as area_type_name,
     'Decidim::Initiative' as resource_type
 from decidim_initiatives
     join {{ ref('organizations') }} decidim_organizations on decidim_organizations.id = decidim_initiatives.decidim_organization_id

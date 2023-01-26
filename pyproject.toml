@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "dbt-decidim"
+version = "0.1.0"
+description = "This project aims to provide models to work around a Decidim database"
+authors = ["THIVEND <baptiste.thivend@protonmail.com>"]
+license = "AGPLv3"
+readme = "README.md"
+packages = [{include = "dbt_decidim"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dbt-core = "^1.4.1"
+dbt-postgres = "^1.4.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

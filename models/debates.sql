@@ -1,7 +1,7 @@
 select
     decidim_debates_debates.id,
-    title->>'{{ var('DBT_LANGUAGE_CODE') }}' as title,
-    regexp_replace(description->>'{{ var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as description,
+    title->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as title,
+    regexp_replace(description->>'{{ env_var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as description,
     start_time,
     end_time,
     decidim_component_id,
