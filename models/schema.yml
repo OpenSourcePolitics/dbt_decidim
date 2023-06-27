@@ -1,0 +1,67 @@
+version: 2
+
+# sources:
+#   - name: public
+#     description: A replica of the postgres database used to power the jaffle_shop app.
+#     tables:
+#       - name: decidim_users
+#       - name: decidim_components
+#       - name: decidim_initiatives
+#         freshness: null
+
+models:
+  - name: blog_posts
+    description: All blog posts created on the platform
+    columns:
+      - name: id
+        description: Primary key
+  
+  - name: organizations
+    description: List all organizations of the Decidim instance
+    config:
+      materialized: view
+    columns:
+      - name: id
+        description: Primary key
+
+  - name: proposals
+    description: all proposals of the decidim instance
+    columns:
+      - name: id
+        description: my wonderful banana is splitted
+        meta:   
+          metabase.semantic_type: type/PK
+      - name: first_author_id
+        description: ID of the author
+        meta:
+          metabase.semantic_type: type/FK
+          metabase.fk_target_table: models.users
+          metabase.fk_target_field: id
+  - name: users
+    description: all users
+    columns:
+      - name: id
+        description: PK
+#     config:
+#       tags: ['pii']
+#     columns:
+#       - name: customer_id
+#         tests:
+#           - unique
+#           - not_null
+
+#   - name: stg_jaffle_shop__orders
+#     config:
+#       materialized: view
+#     columns:
+#       - name: order_id
+#         tests:
+#           - unique
+#           - not_null
+#       - name: status
+#         tests:
+#           - accepted_values:
+#               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+#               config:
+#                 severity: warn
+

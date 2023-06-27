@@ -3,5 +3,4 @@ target/
 dbt_packages/
 logs/
 \.*.yml
-*.sql
 .env

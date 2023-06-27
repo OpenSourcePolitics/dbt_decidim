@@ -1,3 +1,7 @@
+with stg_organizations as (
+    select * from {{ ref('stg_organizations' )}}
+    
+)
 select id,
     name,
     host,
@@ -5,7 +9,7 @@ select id,
     available_locales,
     created_at,
     updated_at,
-    description->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as description,
+    description,
     secondary_hosts,
     available_authorizations,
     header_snippets,
@@ -14,5 +18,5 @@ select id,
     send_welcome_notification,
     users_registration_mode,
     time_zone
-from decidim_organizations
+from stg_organizations
 where host = '{{ env_var('DBT_DECIDIM') }}'

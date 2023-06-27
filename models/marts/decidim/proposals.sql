@@ -4,7 +4,7 @@ select
     ps_slug as decidim_participatory_space_slug,
     coalesce(nullif(decidim_scopes.name->>'{{ env_var('DBT_LANGUAGE_CODE') }}', ''), 'Sans secteur') as decidim_scope_name,
     regexp_replace(decidim_proposals_proposals.title->>'{{ env_var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as title,
-    regexp_replace(decidim_proposals_proposals.body->>'{{ env_var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as body,
+    regexp_replace(decidim_proposals_proposals.body->>'{{ env_var('DBT_LANGUAGE_CODE') }}', E'(<[^>]+>)|(&[a-z]+;)', '', 'gi') as content,
     'Decidim::Proposals::Proposal' as resource_type,
     concat('https://',organization_host,'/',ps_space_type_slug,'/',ps_slug,'/f/',decidim_proposals_proposals.decidim_component_id,'/proposals/',decidim_proposals_proposals.id) as url,
     decidim_proposals_proposals.decidim_component_id,

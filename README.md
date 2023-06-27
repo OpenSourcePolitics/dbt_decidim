@@ -10,4 +10,4 @@ This project aims to do the analystics engineering work around the Open Source P
 - Install dependencies : `poetry install`
 - Fill env file with relevant variables taking example on `.env.example`
 - `source .env`
-- `poetry run dbt run `
+- `poetry run dbt run`
