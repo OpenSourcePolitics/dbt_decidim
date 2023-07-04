@@ -22,7 +22,6 @@ components as (
     select
         id,
         manifest_name,
-        manifest_name_for_url,
         created_at,
         published_at,
         participatory_space_type,
@@ -32,7 +31,6 @@ components as (
 select 
     components.id,
     components.manifest_name,
-    components.manifest_name_for_url,
     components.published_at,
     components.created_at,
     participatory_spaces.id as participatory_space_id,
