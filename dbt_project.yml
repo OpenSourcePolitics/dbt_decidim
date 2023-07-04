@@ -32,7 +32,11 @@ models:
     marts:
       decidim:
         +materialized: view
+    intermediate:
+      decidim:
+        +materialized: view
+        +schema: intermediate
     staging:
       decidim:
-        +materialized: ephemeral
+        +materialized: view
         +schema: staging
