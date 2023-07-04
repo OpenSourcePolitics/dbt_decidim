@@ -13,4 +13,4 @@ select
     decidim_author_id,
     created_at,
     'Decidim::Debates::Debate' as resource_type
-from decidim_debates_debates
+from {{ source('decidim', 'decidim_debates_debates') }}

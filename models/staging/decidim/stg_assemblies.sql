@@ -7,4 +7,4 @@ select
     'Decidim::Assembly' as type,
     'assemblies' as space_type_slug,
     decidim_organization_id
-from decidim_assemblies
+from {{ source('decidim', 'decidim_assemblies') }}

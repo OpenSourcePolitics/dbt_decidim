@@ -32,5 +32,5 @@ select id,
     send_welcome_notification,
     users_registration_mode,
     time_zone
-from decidim_organizations
+from {{ source('decidim', 'decidim_organizations') }}
 where host = '{{ env_var('DBT_DECIDIM') }}'

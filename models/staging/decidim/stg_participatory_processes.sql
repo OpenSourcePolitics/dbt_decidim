@@ -7,4 +7,4 @@ select
     'Decidim::ParticipatoryProcess' as type,
     'processes' as space_type_slug,
     decidim_organization_id
-from decidim_participatory_processes
+from {{ source('decidim', 'decidim_participatory_processes') }}
