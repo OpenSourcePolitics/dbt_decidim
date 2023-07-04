@@ -34,4 +34,5 @@ models:
         +materialized: view
     staging:
       decidim:
-        +materialized: view
+        +materialized: ephemeral
+        +schema: staging
