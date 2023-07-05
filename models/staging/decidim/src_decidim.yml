@@ -10,6 +10,8 @@ sources:
       - name: decidim_budgets_budgets
       - name: decidim_budgets_projects
       - name: decidim_categories
+      - name: decidim_categorizations
+      - name: decidim_comments_comments
       - name: decidim_components
       - name: decidim_debates_debates
       - name: decidim_organizations
