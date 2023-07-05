@@ -7,6 +7,8 @@ sources:
     tables:
       - name: decidim_assemblies
       - name: decidim_blogs_posts
+      - name: decidim_budgets_budgets
+      - name: decidim_budgets_projects
       - name: decidim_categories
       - name: decidim_components
       - name: decidim_debates_debates

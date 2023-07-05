@@ -12,6 +12,7 @@ python = "^3.10"
 dbt-core = "^1.4.1"
 dbt-postgres = "^1.4.1"
 dbt-metabase = "^0.9.15"
+sqlfluff = "^2.1.2"
 
 
 [build-system]

@@ -24,4 +24,4 @@ from decidim_budgets_projects
         where categorizations.categorizable_type = 'Decidim::Budgets::Project'
         group by categorizable_id
     ) categorizations on categorizations.categorizable_id = decidim_budgets_projects.id,
-    lateral (select concat(component_url,'/', manifest_name_for_url,'/', decidim_budgets_budgets.id, '/projects/', decidim_budgets_projects.id) as project_url) t_project_url
+    lateral (select concat(component_url,'/', manifest_name,'/', decidim_budgets_budgets.id, '/projects/', decidim_budgets_projects.id) as project_url) t_project_url
