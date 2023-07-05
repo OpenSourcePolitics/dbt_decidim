@@ -5,11 +5,16 @@ sources:
     schema: public
     description: Replica of Decidim data.
     tables:
-      - name: decidim_users
+      - name: decidim_assemblies
+      - name: decidim_blogs_posts
+      - name: decidim_categories
       - name: decidim_components
+      - name: decidim_debates_debates
+      - name: decidim_organizations
       - name: decidim_initiatives
         freshness: null
-      - name: decidim_debates_debates
+      - name: decidim_participatory_processes
+      - name: decidim_users
 
 
 models:
