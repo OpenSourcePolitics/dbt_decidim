@@ -14,6 +14,8 @@ sources:
       - name: decidim_comments_comments
       - name: decidim_components
       - name: decidim_debates_debates
+      - name: decidim_endorsements
+      - name: decidim_follows
       - name: decidim_organizations
       - name: decidim_initiatives
         freshness: null
