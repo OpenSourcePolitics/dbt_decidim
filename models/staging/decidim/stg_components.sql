@@ -4,7 +4,7 @@ select
         when 'blogs' then 'posts' 
         else manifest_name 
     end) as manifest_name,
-    name->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as name,
+    {{ lang('name') }} as name,
     participatory_space_id,
     participatory_space_type,
     settings,

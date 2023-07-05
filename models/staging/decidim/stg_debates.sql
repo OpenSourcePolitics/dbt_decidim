@@ -1,11 +1,8 @@
 select
     id,
-    title->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as title,
-    regexp_replace(
-        description->>'{{ env_var('DBT_LANGUAGE_CODE') }}',
-        E'(<[^>]+>)|(&[a-z]+;)', '', 'gi'
-    ) as description,
-    instructions->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as instructions,
+    {{ lang('title') }} as title,
+    {{ html_cleaning(lang('description')) }} as description,
+    {{ lang('instructions') }} as instructions,
     start_time,
     end_time,
     closed_at,

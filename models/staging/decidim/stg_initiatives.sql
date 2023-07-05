@@ -13,8 +13,8 @@ select
     id,
     created_at
     published_at,
-    title->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as title,
-    description->>'{{ env_var('DBT_LANGUAGE_CODE') }}' as description,
+    {{ lang('title') }} as title,
+    {{ lang('description') }} as description,
     decidim_author_id,
     decidim_organization_id,
     state,
