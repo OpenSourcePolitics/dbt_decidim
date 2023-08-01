@@ -8,7 +8,7 @@
 {% if table_exists %}
 
 {{ log("Table exists", info=True) }}
-    
+
 select
     id,
     created_at

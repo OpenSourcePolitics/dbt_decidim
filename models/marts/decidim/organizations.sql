@@ -1,6 +1,5 @@
 with stg_organizations as (
     select * from {{ ref('stg_organizations' )}}
-    
 )
 select id,
     name,
