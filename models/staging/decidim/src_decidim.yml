@@ -13,9 +13,11 @@ sources:
       - name: decidim_categorizations
       - name: decidim_comments_comments
       - name: decidim_components
+      - name: decidim_conferences
       - name: decidim_debates_debates
       - name: decidim_attachments
       - name: decidim_endorsements
+      - name: decidim_forms_questionnaires
       - name: decidim_follows
       - name: decidim_organizations
       - name: decidim_initiatives

@@ -1,7 +1,7 @@
 select
     id,
-    title,
-    description,
+    {{ lang('title') }} as title,
+    {{ lang('description') }} as description,
     file,
     content_type,
     attached_to_id,
