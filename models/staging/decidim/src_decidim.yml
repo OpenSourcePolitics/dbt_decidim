@@ -16,6 +16,7 @@ sources:
       - name: decidim_comments_comments
       - name: decidim_components
       - name: decidim_conferences
+        freshness: null
       - name: decidim_debates_debates
       - name: decidim_endorsements
       - name: decidim_forms_questionnaires
