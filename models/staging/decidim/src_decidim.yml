@@ -32,6 +32,7 @@ sources:
       - name: decidim_proposals_proposals
       - name: decidim_proposals_proposal_votes
       - name: decidim_proposals_collaborative_drafts
+      - name: decidim_surveys_surveys
       - name: decidim_users
 
 
