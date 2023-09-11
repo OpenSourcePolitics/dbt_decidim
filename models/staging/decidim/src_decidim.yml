@@ -25,6 +25,7 @@ sources:
       - name: decidim_meetings_meetings
       - name: decidim_organizations
       - name: decidim_participatory_processes
+      - name: decidim_proposals_proposals
       - name: decidim_users
 
 
