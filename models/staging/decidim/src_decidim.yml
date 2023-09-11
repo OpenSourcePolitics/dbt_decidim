@@ -23,6 +23,7 @@ sources:
       - name: decidim_initiatives
         freshness: null
       - name: decidim_meetings_meetings
+      - name: decidim_moderations
       - name: decidim_organizations
       - name: decidim_participatory_processes
       - name: decidim_proposals_proposals
