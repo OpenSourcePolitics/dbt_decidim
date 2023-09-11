@@ -5,6 +5,7 @@ sources:
     schema: public
     description: Replica of Decidim data.
     tables:
+      - name: decidim_accountability_results
       - name: decidim_assemblies
       - name: decidim_attachments
       - name: decidim_blogs_posts
@@ -21,6 +22,7 @@ sources:
       - name: decidim_follows
       - name: decidim_initiatives
         freshness: null
+      - name: decidim_meetings_meetings
       - name: decidim_organizations
       - name: decidim_participatory_processes
       - name: decidim_users
