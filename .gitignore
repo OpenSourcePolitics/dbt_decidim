@@ -3,4 +3,5 @@ target/
 dbt_packages/
 logs/
 \.*.yml
-.env
+.env*
+!.env.example

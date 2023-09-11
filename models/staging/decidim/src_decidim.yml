@@ -21,7 +21,11 @@ sources:
         freshness: null
       - name: decidim_debates_debates
       - name: decidim_endorsements
+      - name: decidim_forms_answers
+      - name: decidim_forms_answer_choices
+      - name: decidim_forms_question_matrix_rows
       - name: decidim_forms_questionnaires
+      - name: decidim_forms_questions
       - name: decidim_follows
       - name: decidim_initiatives
         freshness: null
