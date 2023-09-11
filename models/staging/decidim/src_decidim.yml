@@ -6,6 +6,7 @@ sources:
     description: Replica of Decidim data.
     tables:
       - name: decidim_assemblies
+      - name: decidim_attachments
       - name: decidim_blogs_posts
       - name: decidim_budgets_budgets
       - name: decidim_budgets_projects
@@ -15,13 +16,12 @@ sources:
       - name: decidim_components
       - name: decidim_conferences
       - name: decidim_debates_debates
-      - name: decidim_attachments
       - name: decidim_endorsements
       - name: decidim_forms_questionnaires
       - name: decidim_follows
-      - name: decidim_organizations
       - name: decidim_initiatives
         freshness: null
+      - name: decidim_organizations
       - name: decidim_participatory_processes
       - name: decidim_users
 
